@@ -1,0 +1,36 @@
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+        <input type="hidden" name="CId" [value]="service.formData.CId">
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text bg-white">
+                  <i class="fas fa-book" [class.green-icon]="Name.valid" [class.red-icon]="Name.invalid && Name.touched"></i>
+              </div>
+            </div>
+            <input name="Name" #Name="ngModel" [(ngModel)]="service.formData.Name" type="text" class="form-control" placeholder="Course Name" required>
+          </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="fas fa-book" [class.green-icon]="Subjects.valid" [class.red-icon]="Subjects.invalid && Subjects.touched"></i>
+                </div>
+              </div>
+              <input name="Subjects" #Subjects="ngModel" [(ngModel)]="service.formData.Subjects" type="text" class="form-control" placeholder="Course Subjects" required maxlength="100">
+            </div>
+          </div>
+          <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text bg-white">
+                      <i class="far fa-clock" [class.green-icon]="Duration.valid" [class.red-icon]="Duration.invalid && Duration.touched"></i>
+                  </div>
+                </div>
+                <input name="Duration" #Duration="ngModel" [(ngModel)]="service.formData.Duration" type="text" class="form-control" placeholder="Course Duration" required>
+              </div>
+            </div>
+              <div class="form-group">
+                <button class="btn btn-success btn-lg btn-block" type="submit" [disabled]="form.invalid"><i class="fas fa-database"></i> Submit</button>
+              </div>
+      </form>

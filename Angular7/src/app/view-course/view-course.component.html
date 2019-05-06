@@ -1,0 +1,26 @@
+
+
+  <div class="row">
+    <div class="col-md-8">
+        <div *ngIf="course">
+            <h2>{{course.name | uppercase}} Details</h2>
+            <div><span>id: </span>{{course.CId}}</div>
+            <div>
+              <label>name:
+                <input style="width:550px;" class="form-control" [(ngModel)]="course.Name" placeholder="name" disabled/>
+              </label>
+            </div>
+            <div>
+                <label>subjects:
+                  <input style="width:550px;" class="form-control" [(ngModel)]="course.Subjects" placeholder="subjects" disabled/>
+                </label>
+              </div>
+              <div>
+                  <label>Duration:
+                    <input style="width:550px;" class="form-control" [(ngModel)]="course.Duration" placeholder="Duration" disabled/>
+                  </label>
+                </div>
+            <button style="width:550px;" class="btn btn-success btn-block" (click)="goBack()">go back</button>
+          </div>
+    </div>
+  </div>

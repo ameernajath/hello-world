@@ -1,0 +1,62 @@
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+  <input type="hidden" name="STId" [value]="service.formData.STId">
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text bg-white">
+            <i class="fas fa-user-circle" [class.green-icon]="Name.valid" [class.red-icon]="Name.invalid && Name.touched"></i>
+        </div>
+      </div>
+      <input name="Name" #Name="ngModel" [(ngModel)]="service.formData.Name" type="text" class="form-control" placeholder="Student Name" required>
+    </div>
+  </div>
+  <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text bg-white">
+              <i class="fas fa-birthday-cake" [class.green-icon]="Age.valid" [class.red-icon]="Age.invalid && Age.touched"></i>
+          </div>
+        </div>
+        <input name="Age" #Age="ngModel" [(ngModel)]="service.formData.Age" type="number" class="form-control" placeholder="Student Age" required maxlength="3">
+      </div>
+    </div>
+    <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text bg-white">
+                <i class="fas fa-house-damage" [class.green-icon]="Address.valid" [class.red-icon]="Address.invalid && Address.touched"></i>
+            </div>
+          </div>
+          <input name="Address" #Address="ngModel" [(ngModel)]="service.formData.Address" type="text" class="form-control" placeholder="Student Address" required>
+        </div>
+      </div>
+      <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text bg-white">
+                  <i class="fas fa-graduation-cap" [class.green-icon]="service.formData.Course !== ''" [class.red-icon]="Course.invalid && Course.touched"></i>
+              </div>
+            </div>
+            <input name="Course" #Course="ngModel" [(ngModel)]="service.formData.Course" type="text" class="form-control" placeholder="Course" hidden>
+            <select  [(ngModel)]="service.formData.Course"  class="form-control" name="first">
+               <option value="">Course</option>
+                <option *ngFor="let dd of accessCourse.list" value="{{dd.CId}}" style="color: black;">{{dd.Name}}</option>
+             </select>
+             <div class="input-group-append">
+                <div class="input-group-text bg-white">
+                    <a routerLink="/ViewCourse/{{service.formData.Course}}">
+                    <i class="fas fa-info-circle" [class.green-icon]="service.formData.Course !== ''" [class.red-icon]="Course.invalid && Course.touched"></i>
+                      </a>
+                  </div>
+              </div>
+             <!-- <a routerLink="/ViewCourse/{{service.formData.Course}}"><button [disabled]="service.formData.Course === ''" class="btn btn-success  btn-block"><i class="fas fa-info-circle"></i></button></a> -->
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <button class="btn btn-success btn-lg btn-block" type="submit" [disabled]="form.invalid"><i class="fas fa-database"></i> Submit</button>
+        </div>
+
+        
+
+</form>

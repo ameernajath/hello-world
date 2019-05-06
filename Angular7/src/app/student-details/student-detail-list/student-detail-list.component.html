@@ -1,0 +1,13 @@
+<input type="text" class="form-control" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+<table id="myTable" class="table table-hover">
+  <tr *ngFor="let sd of service.list">
+    <td (click)="populateForm(sd)">{{sd.Name}}</td>
+    <td (click)="populateForm(sd)">{{sd.Age}}</td>
+    <td (click)="populateForm(sd)">{{sd.Address}}</td>
+    <td>
+      <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(sd.STId)"></i>
+    </td>
+    <!-- <td (click)="populateForm(sd)">{{sd.Course}}</td> -->
+  </tr>
+</table>
+
