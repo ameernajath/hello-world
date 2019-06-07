@@ -5,7 +5,7 @@ DecryptPluralSightVideos /F "C:\Users\Kelsey\Desktop\PluralSight\courses" /DB "C
 DecryptPluralSightVideos /F "C:\Users\ana\AppData\Local\Pluralsight\courses" /DB "C:\Users\ana\AppData\Local\Pluralsight\pluralsight.db" /TRANS /RM /OUT "C:\course"
 
 
-First extract the file.
+First extract the file "DecryptPluralSightVideos_v1.3".
 Name the extracted folder with "DecryptPluralSightVideos".
 Go to the folder path using CMD
 Paste this command
