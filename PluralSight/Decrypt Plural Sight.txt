@@ -1,0 +1,16 @@
+generic repo
+DecryptPluralSightVideos /F "C:\Users\Kelsey\Desktop\PluralSight\courses" /DB "C:\Users\Kelsey\AppData\Local\Pluralsight\pluralsight.db" /TRANS /RM /OUT "D:\course"
+
+
+DecryptPluralSightVideos /F "C:\Users\ana\AppData\Local\Pluralsight\courses" /DB "C:\Users\ana\AppData\Local\Pluralsight\pluralsight.db" /TRANS /RM /OUT "C:\course"
+
+
+First extract the file.
+Name the extracted folder with "DecryptPluralSightVideos".
+Go to the folder path using CMD
+Paste this command
+DecryptPluralSightVideos /F "C:\Users\ana\AppData\Local\Pluralsight\courses" /DB "C:\Users\ana\AppData\Local\Pluralsight\pluralsight.db" /TRANS /RM /OUT "C:\course"
+
+first path is where the courses are downloaded on the offline player
+second path is where the pluralsight.db file is located
+third path is where you want to out put the decrypted videos
